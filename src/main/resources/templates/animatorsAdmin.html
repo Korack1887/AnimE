@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> ID </th>
+        <th> Name </th>
+        <th> Description </th>
+        <th> Price </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${animators.empty}">
+        <td colspan="2"> No animators Available </td>
+    </tr>
+    <tr th:each="animator : ${animators}">
+        <td><span th:text="${animator.Id}">Name </span></td>
+        <td><span th:text="${animator.Name}">WorkExp </span></td>
+        <td><span th:text="${animator.Description}">Name </span></td>
+        <td><span th:text="${animator.Price}">WorkExp </span></td>
+        <td><a th:href="@{/updateAnimator/{id}(id=${animator.id})}">Edit</a></td>
+        <td><a th:href="@{/deleteAnimator/{id}(id=${animator.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/createAnimator">Create animator</a>
+<a href="/ordersAdmin">Orders</a>
+<a href="/usersAdmin">Users</a>
+</body>
+</html>

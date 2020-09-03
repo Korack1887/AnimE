@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> Имя</th>
+        <th> Сумма </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="test : ${tests}">
+        <td><span th:text="${test.Name}">Name </span></td>
+        <td><span th:text="${test.Price}">WorkExp </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

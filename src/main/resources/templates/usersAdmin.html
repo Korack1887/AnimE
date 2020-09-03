@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> ID </th>
+        <th> Login </th>
+        <th> Password </th>
+        <th> Name </th>
+        <th> Role </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td><span th:text="${user.Id}">Name </span></td>
+        <td><span th:text="${user.Login}">WorkExp </span></td>
+        <td><span th:text="${user.Password}">Name </span></td>
+        <td><span th:text="${user.Name}">WorkExp </span></td>
+        <td><span th:text="${user.Role.Name}">Name </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

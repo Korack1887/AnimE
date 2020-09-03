@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+<Form name="animator" action="/createAnimator" method="post" th:object="${animator}">
+    <p>Name</p>
+    <input title="name" type="text" name="name">
+    <p>Description</p>
+    <input title="work experience" type="text" name="description">
+    <p>Costume</p>
+    <select class="form-control" type="number" name="costume_id">
+        <option th:each="costume : ${costumes}" th:value="${costume.id}" th:text="${costume.name}"></option>
+    </select>
+    <p>Price</p>
+    <input title="work experience" type="number" name="price">
+    <input type="submit" value="ok">
+</Form>
+</body>
+</html>

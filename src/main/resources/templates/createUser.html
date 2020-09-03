@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<Form name="user" action="/createUser" method="post" th:object="${user}">
+    <p>Login/Email</p>
+    <input title="login" type="email" name="login">
+    <p>Password</p>
+    <input title="password" type="password" name="password">
+    <p>Name</p>
+    <input title="Name" type="test" name="name">
+    <input type="submit" value="ok">
+</Form>
+</body>
+</html>

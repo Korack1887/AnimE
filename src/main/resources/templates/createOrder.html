@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<Form name="animator" action="/createOrder" method="post" th:object="${animators}">
+    <p>Animator</p>
+    <input title="Name" type="text" name="id" th:value=${animator.Name} readonly>
+    <p>Customer id</p>
+    <select class="form-control" type="text" name="costume_id">
+        <option th:each="costume : ${costumes}" th:value="${costume.id}" th:text="${costume.name}"></option>
+    </select>
+    <input type="submit" value="ok">
+</Form>
+<Form name="animator" action="/createOrder" method="post" th:object="${animator}">
+    <p>Animator</p>
+    <input title="id" type="number" name="id" th:value=${animator.Id} readonly>
+    <p>Customer id</p>
+    <select class="form-control" type="object" name="costume">
+        <option th:each="costume : ${costumes}" th:object="${costume}" th:text="${costume.name}"></option>
+    </select>
+    <input type="submit" value="ok">
+</Form>
+</body>
+</html>
