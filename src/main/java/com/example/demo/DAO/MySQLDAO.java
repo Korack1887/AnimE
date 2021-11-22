@@ -161,7 +161,7 @@ public class MySQLDAO implements IMyDAO {
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
             while (rs.next()) { //if rs.next() returns false
-                return new Order(id,getUser(rs.getInt("user_id")),getRealisation(rs.getInt("realisation_id")),getStatus(rs.getInt("status_id")));
+                return new Order(id,getUser(rs.getInt("user_id")),getRealisation(rs.getInt("realisation_id")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -294,44 +294,7 @@ public class MySQLDAO implements IMyDAO {
         return null;
     }
 
-    @Override
-    public void insertStatus(Status status) throws SQLException {
 
-    }
-
-    @Override
-    public void deleteStatus(int id) {
-
-    }
-
-    @Override
-    public void updateStatus(Status status) {
-
-    }
-
-    @Override
-    public Status getStatus(int id) {
-        try (Connection con = ConnectionFactory.getConnection(); PreparedStatement st = con.prepareStatement("SELECT * FROM status WHERE status_id=?")) {
-            st.setInt(1, id);
-            ResultSet rs = st.executeQuery();
-            while (rs.next()) { //if rs.next() returns false
-                return new Status(id, rs.getString("status_name"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        try {
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(MySQLDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-
-    @Override
-    public ArrayList<Status> getAllStatus() {
-        return null;
-    }
 
     @Override
     public void insertUser(User user) throws SQLException {

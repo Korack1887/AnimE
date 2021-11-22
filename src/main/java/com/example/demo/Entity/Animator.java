@@ -6,7 +6,6 @@ public class Animator {
     String description;
     Costume costume;
     int price;
-    int costume_id;
 
     public int getCostume_id() {
         return costume.getId();

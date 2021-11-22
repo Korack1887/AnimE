@@ -4,7 +4,6 @@ public class Order {
     int id;
     User user;
     Realisation realisation;
-    Status status;
 
     public int getId() {
         return id;
@@ -30,20 +29,12 @@ public class Order {
         this.realisation = realisation;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
     public Order() {
     }
 
-    public Order(int id, User user, Realisation realisation, Status status) {
+    public Order(int id, User user, Realisation realisation) {
         this.id = id;
         this.user = user;
         this.realisation = realisation;
-        this.status = status;
     }
 }

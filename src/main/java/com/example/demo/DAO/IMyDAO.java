@@ -49,11 +49,6 @@ public interface IMyDAO {
     Role getRole(int id);
     ArrayList< Role > getAllRole();
     //////////////////////////////////////////////////////////
-    void insertStatus(Status status) throws SQLException;
-    void deleteStatus(int id);
-    void updateStatus(Status status);
-    Status getStatus(int id);
-    ArrayList< Status > getAllStatus();
     //////////////////////////////////////////////////////////
     void insertUser(User user) throws SQLException;
     void deleteUser(int id);
